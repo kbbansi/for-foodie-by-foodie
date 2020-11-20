@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">HenryProject-FFBF</string>
+    <string name="app_title">For Foodie By Foodie</string>
+    <string name="your_foodie_app">Your Foodie App</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="first_name">First Name</string>
+    <string name="surname">Surname</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="register">Register</string>
+</resources>
