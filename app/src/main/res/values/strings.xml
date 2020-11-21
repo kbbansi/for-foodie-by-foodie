@@ -9,4 +9,6 @@
     <string name="email">Email</string>
     <string name="password">Password</string>
     <string name="register">Register</string>
+    <string name="restaurants">Restaurants</string>
+    <string name="for_foodie_by_foodie">For Foodie By Foodie</string>
 </resources>
