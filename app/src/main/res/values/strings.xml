@@ -10,5 +10,12 @@
     <string name="password">Password</string>
     <string name="register">Register</string>
     <string name="restaurants">Restaurants</string>
-    <string name="for_foodie_by_foodie">For Foodie By Foodie</string>
+    <string name="for_foodie_by_foodie">Restaurants</string>
+    <string name="restaurant_image">Restaurant Image</string>
+    <string name="todo">TODO</string>
+    <string name="add_a_new_restaurant">Add a New Restaurant</string>
+    <string name="restaurant_name">Restaurant Name</string>
+    <string name="url">URL</string>
+    <string name="add_restaurant">Add Restaurant</string>
+    <string name="description">Description</string>
 </resources>

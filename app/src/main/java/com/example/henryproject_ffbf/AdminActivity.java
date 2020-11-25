@@ -38,12 +38,13 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             case R.id.streetFoodButton:
                 Log.d(TAG, "Starting AdminStreetFood Activity");
                 // start an activity
-                startActivity(new Intent(getApplicationContext(), AdminStreet.class));
+                startActivity(new Intent(this, AdminStreet.class));
                 break;
 
             case R.id.usersButton:
                 Log.d(TAG, "Starting ViewUsers Activity");
                 // start an activity
+                startActivity(new Intent(this, ViewUsers.class));
                 finish();
                 break;
         }

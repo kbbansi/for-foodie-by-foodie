@@ -3,4 +3,5 @@
     <color name="colorPrimary">#00BFA5</color>
     <color name="colorPrimaryDark">#00BFA5</color>
     <color name="colorAccent">#00BFA5</color>
+    <color name="listCell">#FCFFFC</color>
 </resources>

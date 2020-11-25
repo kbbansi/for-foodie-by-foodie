@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ViewUsers"></activity>
+        <activity android:name=".AddRestaurant"></activity>
+        <activity android:name=".RestaurantDetail" />
+        <activity android:name=".ViewUsers" />
         <activity android:name=".AdminStreet" />
         <activity android:name=".AdminRestaurant" />
         <activity android:name=".UserActivity" />
