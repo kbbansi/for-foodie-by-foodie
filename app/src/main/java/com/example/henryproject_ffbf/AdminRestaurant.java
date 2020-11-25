@@ -6,11 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,9 +30,9 @@ public class AdminRestaurant extends AppCompatActivity implements View.OnClickLi
     FloatingActionButton floatingActionButton;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
+    BottomNavigationView bottomNavigationView;
 
-    private ListView listView;
-   // public static ArrayList<String> restaurantList = new ArrayList<>();
+    // public static ArrayList<String> restaurantList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,8 +40,12 @@ public class AdminRestaurant extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.activity_admin_restaurant);
 
         floatingActionButton = findViewById(R.id.addNewRestaurantFAB);
-        listView = findViewById(R.id.listView);
+        ListView listView = findViewById(R.id.listView);
         floatingActionButton.setOnClickListener(this);
+
+        bottomNavigationView = findViewById(R.id.bottom_nav);
+
+        bottomNavigationView.setSelectedItemId(R.id.restaurants_tab);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         reference = firebaseDatabase.getReference().child("Restaurants");
@@ -51,7 +57,7 @@ public class AdminRestaurant extends AppCompatActivity implements View.OnClickLi
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                // restaurantList.clear();
+                restaurantList.clear();
                 if (dataSnapshot.exists()){
                     for (DataSnapshot snapshot: dataSnapshot.getChildren()) {
                         Restaurants restaurant = snapshot.getValue(Restaurants.class);
@@ -72,6 +78,43 @@ public class AdminRestaurant extends AppCompatActivity implements View.OnClickLi
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.d("Error: ", databaseError.getMessage());
                 Toast.makeText(AdminRestaurant.this, "Could Not Connect to the Server", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
+        // bottom nav operations
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.dashboard:
+                        startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+
+                    case R.id.streetFood_tab:
+                        startActivity(new Intent(getApplicationContext(), AdminStreet.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+
+                    case R.id.profile_tab:
+                        startActivity(new Intent(getApplicationContext(), UserProfile.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+
+                    case R.id.restaurants_tab:
+                        return true;
+
+                    case R.id.users_tab:
+                        startActivity(new Intent(getApplicationContext(), ViewUsers.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+                }
+                return false;
             }
         });
     }

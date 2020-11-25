@@ -6,22 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AdminRestaurant">
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:background="@color/colorAccent"
-        android:text="@string/for_foodie_by_foodie"
-        android:textAlignment="center"
-        android:textStyle="bold"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/addNewRestaurantFAB"
         android:layout_width="wrap_content"
@@ -32,15 +16,24 @@
         android:elevation="8dp"
         android:hapticFeedbackEnabled="true"
         android:src="@drawable/ic_add_new_item"
-        android:layout_alignParentBottom="true"
+        android:layout_above="@id/bottom_nav"
         android:layout_alignParentEnd="true"/>
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_marginTop="60dp"/>
+        android:layout_marginTop="10dp"/>
 
-
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        app:itemBackground="@color/colorAccent"
+        app:itemIconTint="@drawable/selector"
+        app:itemTextColor="@drawable/selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:menu="@menu/admin_menu" />
 
 </RelativeLayout>
