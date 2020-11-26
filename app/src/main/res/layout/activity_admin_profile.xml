@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".UserProfile">
+    tools:context=".AdminProfile">
 
     <ImageView
         android:id="@+id/restaurantImage"
@@ -96,5 +96,5 @@
         app:itemIconTint="@drawable/selector"
         app:itemTextColor="@drawable/selector"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:menu="@menu/menu_nav_bar" />
+        app:menu="@menu/admin_menu" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,14 +1,14 @@
 package com.example.henryproject_ffbf;
 
 public class StreetFood {
-    private String name, description, url, summary;
+    private String name, description, location, summary;
 
     public StreetFood() {}
 
-    public StreetFood(String name, String description, String url) {
+    public StreetFood(String name, String description, String location) {
         this.name = name;
         this.description = description;
-        this.url = url;
+        this.location = location;
     }
 
     public String getName() {
@@ -27,12 +27,12 @@ public class StreetFood {
         this.description = description;
     }
 
-    public String getUrl() {
-        return url;
+    public String getLocation() {
+        return location;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
 

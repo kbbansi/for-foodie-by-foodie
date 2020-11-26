@@ -100,7 +100,7 @@ public class AdminRestaurant extends AppCompatActivity implements View.OnClickLi
                         return true;
 
                     case R.id.profile_tab:
-                        startActivity(new Intent(getApplicationContext(), UserProfile.class));
+                        startActivity(new Intent(getApplicationContext(), AdminProfile.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
@@ -109,7 +109,7 @@ public class AdminRestaurant extends AppCompatActivity implements View.OnClickLi
                         return true;
 
                     case R.id.users_tab:
-                        startActivity(new Intent(getApplicationContext(), ViewUsers.class));
+                        startActivity(new Intent(getApplicationContext(), AdminViewUsers.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;

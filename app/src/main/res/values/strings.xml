@@ -18,4 +18,5 @@
     <string name="url">URL</string>
     <string name="add_restaurant">Add Restaurant</string>
     <string name="description">Description</string>
+    <string name="add_a_street_vendor">Add A Street Vendor</string>
 </resources>

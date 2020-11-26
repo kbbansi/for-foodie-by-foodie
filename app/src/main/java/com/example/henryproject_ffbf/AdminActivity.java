@@ -9,7 +9,6 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -53,7 +52,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                         return true;
 
                     case R.id.profile_tab:
-                        startActivity(new Intent(getApplicationContext(), UserProfile.class));
+                        startActivity(new Intent(getApplicationContext(), AdminProfile.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
@@ -65,7 +64,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
                         return true;
 
                     case R.id.users_tab:
-                        startActivity(new Intent(getApplicationContext(), ViewUsers.class));
+                        startActivity(new Intent(getApplicationContext(), AdminViewUsers.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
@@ -93,7 +92,7 @@ public class AdminActivity extends AppCompatActivity implements View.OnClickList
             case R.id.usersButton:
                 Log.d(TAG, "Starting ViewUsers Activity");
                 // start an activity
-                startActivity(new Intent(this, ViewUsers.class));
+                startActivity(new Intent(this, AdminViewUsers.class));
                 finish();
                 break;
         }

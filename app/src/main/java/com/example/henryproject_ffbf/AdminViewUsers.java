@@ -20,7 +20,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class ViewUsers extends AppCompatActivity {
+public class AdminViewUsers extends AppCompatActivity {
 
     FirebaseDatabase firebaseDatabase;
     DatabaseReference reference;
@@ -59,19 +59,20 @@ public class ViewUsers extends AppCompatActivity {
                     }
                     adapter.notifyDataSetChanged();
                 } else {
-                    Toast.makeText(ViewUsers.this, "No Users Yet", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(AdminViewUsers.this, "No Users Yet", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.d("Error: ", databaseError.getMessage());
-                Toast.makeText(ViewUsers.this, "Could Not Connect to the Server", Toast.LENGTH_SHORT).show();
+                Toast.makeText(AdminViewUsers.this, "Could Not Connect to the Server", Toast.LENGTH_SHORT).show();
             }
         });
 
         // bottom nav operations
-        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(
+                new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
@@ -88,7 +89,7 @@ public class ViewUsers extends AppCompatActivity {
                         return true;
 
                     case R.id.profile_tab:
-                        startActivity(new Intent(getApplicationContext(), UserProfile.class));
+                        startActivity(new Intent(getApplicationContext(), AdminProfile.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;

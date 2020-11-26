@@ -64,7 +64,8 @@ public class AddRestaurant extends AppCompatActivity implements View.OnClickList
         if (restaurant_name.isEmpty() || restaurant_description.isEmpty() || url_link.isEmpty() || !Patterns.WEB_URL.matcher(url_link).matches()) {
             Toast.makeText(AddRestaurant.this, "Cannot Add a Restaurant at this time", Toast.LENGTH_SHORT).show();
         } else {
-            final Restaurants restaurant = new Restaurants(restaurant_name, restaurant_description, url_link);
+            final Restaurants restaurant =
+                    new Restaurants(restaurant_name, restaurant_description, url_link);
             databaseReference
                     .push().setValue(restaurant)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
@@ -78,7 +79,7 @@ public class AddRestaurant extends AppCompatActivity implements View.OnClickList
                                 finish();
                             } else {
                                 Log.d("Event: ", task.getException().getMessage());
-                                Toast.makeText(AddRestaurant.this, "Cannot Add a Restaurant at this time", Toast.LENGTH_LONG).show();
+                                Toast.makeText(AddRestaurant.this, "Cannot Add Restaurant at this time", Toast.LENGTH_LONG).show();
                             }
                             progressBar.setVisibility(View.GONE);
                         }

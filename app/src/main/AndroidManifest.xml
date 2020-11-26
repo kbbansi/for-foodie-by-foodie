@@ -9,15 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AddRestaurant"></activity>
+        <activity android:name=".AddStreetFoodActivity"></activity>
+        <activity android:name=".UserViewUsers" />
+        <activity android:name=".UserProfile" />
+        <activity android:name=".UserStreetFood" />
+        <activity android:name=".AddRestaurant" />
         <activity android:name=".RestaurantDetail" />
-        <activity android:name=".ViewUsers" />
+        <activity android:name=".AdminViewUsers" />
         <activity android:name=".AdminStreet" />
         <activity android:name=".AdminRestaurant" />
         <activity android:name=".UserActivity" />
         <activity android:name=".CriticActivity" />
         <activity android:name=".AdminActivity" />
-        <activity android:name=".UserProfile" />
+        <activity android:name=".AdminProfile" />
         <activity android:name=".RegisteUser" />
         <activity android:name=".MainActivity">
             <intent-filter>

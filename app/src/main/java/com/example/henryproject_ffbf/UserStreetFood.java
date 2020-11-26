@@ -22,7 +22,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
-public class AdminStreet extends AppCompatActivity implements View.OnClickListener {
+public class UserStreetFood extends AppCompatActivity implements View.OnClickListener {
 
     FloatingActionButton floatingActionButton;
     FirebaseDatabase firebaseDatabase;
@@ -32,7 +32,7 @@ public class AdminStreet extends AppCompatActivity implements View.OnClickListen
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_admin_street);
+        setContentView(R.layout.activity_user_street_food);
 
         floatingActionButton = findViewById(R.id.addStreetVendor);
         ListView listView = findViewById(R.id.listView);
@@ -65,25 +65,24 @@ public class AdminStreet extends AppCompatActivity implements View.OnClickListen
                     }
                     adapter.notifyDataSetChanged();
                 } else {
-                    Toast.makeText(AdminStreet.this, "No Street Vendors Yet", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UserStreetFood.this, "No Street Vendors Yet", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.d("Error: ", databaseError.getMessage());
-                Toast.makeText(AdminStreet.this, "Could Not Connect to the Server", Toast.LENGTH_SHORT).show();
+                Toast.makeText(UserStreetFood.this, "Could Not Connect to the Server", Toast.LENGTH_SHORT).show();
             }
         });
 
-
-
+        // bottom nav operations
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
-                    case R.id.dashboard:
-                        startActivity(new Intent(getApplicationContext(), AdminActivity.class));
+                    case R.id.restaurants_tab:
+                        startActivity(new Intent(getApplicationContext(), UserActivity.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
@@ -91,20 +90,14 @@ public class AdminStreet extends AppCompatActivity implements View.OnClickListen
                     case R.id.streetFood_tab:
                         return true;
 
-                    case R.id.profile_tab:
-                        startActivity(new Intent(getApplicationContext(), AdminProfile.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-
-                    case R.id.restaurants_tab:
-                        startActivity(new Intent(getApplicationContext(), AdminRestaurant.class));
-                        overridePendingTransition(0, 0);
-                        finish();
-                        return true;
-
                     case R.id.users_tab:
-                        startActivity(new Intent(getApplicationContext(), AdminViewUsers.class));
+                        startActivity(new Intent(getApplicationContext(), UserViewUsers.class));
+                        overridePendingTransition(0, 0);
+                        finish();
+                        return true;
+
+                    case R.id.profile_tab:
+                        startActivity(new Intent(getApplicationContext(), UserProfile.class));
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
