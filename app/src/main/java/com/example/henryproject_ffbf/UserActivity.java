@@ -98,8 +98,6 @@ public class UserActivity extends AppCompatActivity {
                         overridePendingTransition(0, 0);
                         finish();
                         return true;
-
-
                 }
                 return false;
             }
